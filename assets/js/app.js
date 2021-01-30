@@ -98,3 +98,27 @@ function removeTask(e) {
     }
 
 }
+
+const filterInput = document.querySelector("#filter");
+
+
+function filterTasks(e) {
+
+    if (taskInput.value){
+      const listName = document.querySelector(".collection");
+      const list = listName.querySelectorAll("li");
+
+      list.forEach(
+        function(item){
+          if(filterInput.value === item.firstChild.textContent){
+          item.style.display = "block";
+          }else{
+            item.style.display = "none";
+          };
+
+        }
+      );
+
+    }
+
+}
